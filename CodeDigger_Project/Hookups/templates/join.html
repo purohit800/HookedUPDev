@@ -1,0 +1,28 @@
+{% extends 'Hookup/joinbase.html' %}
+{% block title %}HOOKUP/JOIN{% endblock title %}
+{% block body %}
+<div class="container my-3 text-center">
+  <h1 class ="my-4 text-center">WELCOME TO HOOKUPS</h1>
+  <h2 class ="my-4 text-center">PLEASE FILL IN YOUR DETAILS BELOW</h2><br></br>
+  <form method="post" action="/join">      
+  {% csrf_token %}
+    <div class="form-group">
+      <label for="name">NAME: </label>
+      <input type="text" class="form-control" name="name" id="exampleInputname" placeholder="Enter your name"><br></br>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">E-MAIL: </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter your E-mail"><br></br>
+    </div>
+    <div class="form-group">
+      <label for="title">PROJECT TITLE: </label>
+      <input type="text" class="form-control" name="title" id="exampleInputtitle" placeholder="Enter your project title"><br></br>
+    </div>
+    <div class="form-group">
+      <label for="DESC">YOUR DESCRIPTION: </label>
+      <textarea type="text" class="form-control" name="desc" id="exampleInputdescription" placeholder="Enter your Project-description here"></textarea><br></br>
+    </div>
+    <button type="submit" class="btn btn-primary text-center">Submit</button>
+  </form>
+</div>
+{% endblock body %}
